@@ -4,6 +4,7 @@ body{
 }
 
 map{
+	display: block;
 	/* width: 100px;
 	height: 100px; */
 }
@@ -29,4 +30,8 @@ svg .st1 {
 	stroke-miterlimit:10;
 	fill: white;
 	fill-opacity: .8;
+}
+
+map:hover svg .st1{
+	stroke: red;
 }
