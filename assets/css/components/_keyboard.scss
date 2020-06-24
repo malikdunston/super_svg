@@ -1,0 +1,49 @@
+.keyboard-container {
+     display: inline-block;
+     text-align: center;
+     background: rgb(77, 77, 77);
+
+     ul {
+          padding-left: 0;
+          margin-top: 5px;
+          margin-bottom: 5px;
+
+          li.btn {
+               background-color: gray;
+               display: inline-block;
+               width: 90px;
+               height: 45px;
+               line-height: 45px;
+               text-align: center;
+               margin-left: 5px;
+               border-radius: 3px;
+               border: solid 1px black;
+
+               &:hover {
+                    background-color: aliceblue;
+               }
+          }
+     }
+}
+
+#mydiv {
+     position: absolute;
+     z-index: 9;
+     background-color: #f1f1f1;
+     border: 1px solid #d3d3d3;
+     text-align: center;
+     #mydivheader {
+          padding: 10px;
+          cursor: move;
+          z-index: 10;
+          background-color: #2196F3;
+          color: #fff;
+     }
+     &.other{
+          top: 0;
+          left: 0;
+          #mydivheader{
+               background: red;
+          }
+     }
+}

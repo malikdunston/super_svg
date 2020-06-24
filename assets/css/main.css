@@ -1,0 +1,32 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+map{
+	/* width: 100px;
+	height: 100px; */
+}
+
+map svg{
+	width: 120px;
+	height: 120px;
+	position: relative;
+	background: darkgray;
+}
+
+svg .st0 rect,
+svg .st0 path{
+	fill:none;
+	stroke:black;
+	stroke-width:35;
+	stroke-miterlimit:10;
+}
+svg .st1 {
+	fill:none;
+	stroke:lime;
+	stroke-width:35;
+	stroke-miterlimit:10;
+	fill: white;
+	fill-opacity: .8;
+}

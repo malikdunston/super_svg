@@ -1,0 +1,108 @@
+$basesize: 2.5rem;
+
+header {
+	display: block;
+	margin: 0;
+	height: $basesize;
+	width: 100%;
+	background: $techgold;
+	position: fixed;
+	z-index: 1000;
+	transition: top 2s; // transition
+	.line-pos{
+		display: none;
+		.ctn-logo{
+			display: none;
+		}
+	}
+	#menu{
+		// background: green;
+		width: 100%;
+		z-index: 1000;
+		.menu-top{
+			@include flex(row, align-center);
+			// background: purple;
+			#gt-logo{
+				opacity: .7;
+				// display: none;
+				// background: blue;
+				height: 1.5rem;
+				margin-left: .75rem;
+				margin-right: auto;
+			}
+			.menu-top-item{
+				height: $basesize;
+				width: $basesize;
+				// background: yellow;
+				@include flex(row, align-center, space-around);
+				.avatar{
+					width: 1.5rem;
+					height: 1.5rem;
+					// border-radius: 50%;
+				}
+				.hamburger{
+					// background: orange;
+					opacity: .6;
+					position: relative;
+					width: .8rem;
+					height: .8rem;
+					@include flex(column, align-center, space-between);
+					span{
+						background: black;
+						display: block;
+						width: 100%;
+						height: 4px;
+						border-radius: 2px;
+					}
+				}
+				&.variable-width{
+					width: auto;
+					padding: 0 1rem;
+				}
+				&.highlighted{
+					background: rgba(0, 0, 0, 0.1);
+				}
+			}
+		}
+		.menu-body{
+			background: $techgold;
+			position: fixed;
+			width: 100%;
+			height: 0;
+			transition: 1s;
+			overflow-y: scroll;
+			ul{
+				margin: 0;
+			}
+		}
+		&.open{
+			.menu-body{
+				height: calc(100% - 2.5rem);
+				// background: blue!important;
+			}
+		}
+	}
+}
+
+@include breakpoint(lg){ // > 1360
+	header{
+		#menu{
+			.menu-top{
+				max-width: 1320px;
+				margin: 0 auto;
+			}
+			.menu-body{
+				> *,
+				> ul{
+					max-width: 1320px;
+					margin: 0px auto;
+				}
+			}
+		}
+	}
+}
+
+// animations
+header.headerHide{
+	top: -$basesize;
+}

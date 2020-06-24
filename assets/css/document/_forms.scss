@@ -1,0 +1,31 @@
+input {
+	border: 0;
+	// padding: 0 0 0 1rem;
+	// background: purple!important;
+		&::placeholder {
+			opacity: .4;
+		}
+}
+
+*:focus{
+	outline: none;
+}
+
+form {
+	@include flex(column);
+
+	input {
+		height: 3rem;
+		display: block;
+		border-bottom: 1px solid $offwhite;
+
+
+		&:last-child {
+			border: 0;
+		}
+	}
+
+	button {
+		background: $fadewhite;
+	}
+}

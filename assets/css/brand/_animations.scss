@@ -1,0 +1,32 @@
+.animate-switch-container {
+     overflow: hidden;
+     width: 100%;
+     height: 100%;
+     position: relative;
+     .animate-switch {
+          &.ng-animate {
+               transition: left 0.75s;
+               position: absolute;
+          }
+          &.ng-leave.ng-leave-active{
+               z-index: 0;
+               right: 100vw;
+          }
+          &.ng-enter {
+               z-index: 1;
+               left: -100vw;
+          }
+
+          &.ng-leave{
+               left: 0;
+               z-index: 0;
+          }
+          &.ng-enter.ng-enter-active {
+               z-index: 1;
+               left: 0;
+          }
+     }
+}
+
+
+

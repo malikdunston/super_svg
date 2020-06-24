@@ -1,0 +1,57 @@
+// gt colors
+	$techgold: rgb(179, 163, 105); // main gold
+	$blue: rgb(0, 38, 58);
+	$buzzgold: rgb(234, 170, 0);
+
+// ui colors
+	$white: rgb(255, 255, 255);
+	$fadewhite: rgb(246, 246, 246);
+	$offwhite: rgb(236, 236, 236);  // this is the body bg color for default
+	$lgray: rgb(211, 211, 211);
+	$gray: rgb(145, 145, 145);
+	$mgray: rgb(39, 39, 39);
+	$dgray: rgb(22, 22, 22);  // this is the body bg color for darkmode
+	$black: rgb(0, 0, 0);
+
+// transparencies
+	// white
+		$whiteTransparent60: rgba(255, 255, 255, 0.6);
+		$whiteTransparent10: rgba(255, 255, 255, 0.1);
+		$whiteTransparent2: rgba(255, 255, 255, 0.02);
+	// dgray
+		$dgrayTransparent60: rgba(22, 22, 22, 0.6);
+		$dgrayTransparent10: rgba(22, 22, 22, 0.1);
+	// black
+		$blackTransparent60: rgba(0, 0, 0, 0.6);
+		$blackTransparent10: rgba(0, 0, 0, 0.1);
+
+
+body{
+	$bg: $offwhite;
+	background: $bg;
+// darkmode
+&.darkmode{
+	$bg: $offwhite;
+	background: $bg;
+	color: $white!important;
+	// .box-list{
+		.box{
+			background: $mgray!important;
+		&.empty{
+			background: $black!important;
+			.box-top,
+			.box-bottom{
+				opacity: .7;
+			}
+		}}
+	// }
+
+	#main,
+	#main > *{
+		background: $dgray;
+	}
+
+	input::placeholder{
+		color: $whiteTransparent60;
+	}
+}}

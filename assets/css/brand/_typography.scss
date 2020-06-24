@@ -1,0 +1,99 @@
+html,
+body {
+	font-family: 'Roboto', sans-serif;
+	// background: red;
+// headers...
+// typography
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p{
+		margin: 0;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6{
+		margin-bottom: 1rem;
+		line-height: 1.15em;
+		span{
+			font-size: inherit;
+			opacity: .4;
+			margin: .25rem;
+		}
+		&:only-child{
+			margin: 0;
+		}
+	}
+
+// any headers that aren't the
+// first child need top padding...
+	*+ h1,
+	*+ h2,
+	*+ h3,
+	*+ h4,
+	*+ h5,
+	*+ h6,
+	* + .lockup{
+		margin-top: 1.15rem;
+		// background: red;
+	}
+
+// specific headers
+	h1{
+		margin-bottom: 1rem;
+	}
+	h2{
+		margin-bottom: .8rem;
+	}
+	h3{
+		margin-bottom: .65rem;
+	}
+	h4{
+		margin-bottom: .5rem;
+	}
+	h5{
+		margin-bottom: .3rem;
+	}
+	h6{
+		margin-bottom: .15rem;
+	}
+
+// headers with subtitles
+// are called LOCKUPS
+	.lockup{
+		margin-bottom: .75rem;
+		*:first-child{
+			margin-bottom: .2rem;
+		}
+		*:last-child{
+                              font-size: .6rem;
+			margin: 0;
+			&:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6){
+				font-style: italic;
+			}
+		}
+	}
+
+// paragraphs
+	p,
+	span,
+	input,
+	button{
+		font-size: .66rem;
+		line-height: 1.75em;
+	}
+	p{
+		color: $gray;
+		margin-bottom: .75rem;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	// all headers that come after paragraphs...
+	}
+}

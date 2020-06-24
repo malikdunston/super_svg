@@ -1,0 +1,209 @@
+
+directory {
+	// display: block;;
+	// background: black;
+	//      flex: 1;
+	// color: white;
+
+	#directory-header{
+		background-color: $dgray;
+		background-size: cover;
+		background-position: center;
+		position: relative;
+		height: 6rem;
+		transition: height 1s; // transition timing
+		
+		> *{
+			position: absolute;
+			z-index: 2;
+		}
+
+		section{
+			padding: 0 0 0 .5rem;
+			bottom: 2.5rem;
+			transition: bottom .15s; // transition timing
+		}
+
+		[id^=search] {
+			@include flex(row);
+			padding: .5rem;
+			height: 2.5rem;
+			bottom: 0;
+			width: 100%;
+			transition: height .333s;
+			*{
+				// transition: all 1.5s;
+			}
+
+			> *{
+				background: $blackTransparent60;
+				margin-left: .5rem;
+				&:first-child{
+					margin-left: 0;
+				}
+				// transition: 1s all;
+				border-radius: 1.5rem;
+				overflow: hidden;
+			}
+
+			.searchbar {
+				flex: 1;
+				@include flex(row);
+				position: relative;
+				.icon-search{
+					width: 1.25rem;
+					padding: .2rem; 
+					padding-left: .5rem;
+					opacity: .25;
+					transition: 1.5s opacity;
+				}
+				input{
+					flex: 1;
+					border: 0;
+					padding-left: .25rem;
+					color: white;
+					background: transparent;
+				}
+			}
+
+			div.cancel{
+				background: transparent;
+				font-size: .5rem;
+				line-height: 1.5rem;
+			}
+
+		}
+
+		.background{
+			// background: linear-gradient(10deg, $dgray 0%, $dgrayTransparent60 100%);
+			background: linear-gradient(0deg, $dgray 0%, $dgrayTransparent60 100%);
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			transition: background .33s; // transition....
+		}
+	}
+
+
+	table {
+		// color: $whiteTransparent60;
+		width: 100%;
+		font-size: .5rem;
+	// all tables
+		border-spacing: 0;
+
+		tr {
+			// min-height: 2.5rem;
+			> *{
+				padding: .5rem;
+			}
+		}
+
+		thead{
+			text-align: left;
+			font-weight: 100;
+			tr{
+				// height: 2rem;
+				> *,
+				th{
+					padding: .5rem .5rem .5rem .5rem;
+					font-weight: 400;
+					font-size: .3rem;
+					color: white;
+					letter-spacing: .1rem;
+				}
+			}
+		}
+
+		tbody {
+			tr {
+				> *{
+					color: $white;
+					opacity: .5;
+					// border-bottom: 2px solid $whiteTransparent2;
+				// first column...
+					&:first-child{
+						// color: red;
+						// opacity: .5;
+					}
+				}
+				&:nth-of-type(odd){
+					background: $whiteTransparent2;
+				}
+
+			}
+		}
+	}
+
+// https://codepen.io/lewismcarey/pen/GJZVoG
+// use this on ticker for now as well...
+	$playlistIndexHeight: 2rem;
+	#playlist-index{
+		background: red;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100vw;
+		height: 3rem; // 45px
+		overflow-x: scroll;
+		> *{
+			background: blue;
+			display: inline-block;
+			white-space: nowrap;
+			height: $playlistIndexHeight;
+			letter-spacing: 0;
+			> *{
+				line-height: $playlistIndexHeight;
+				background: green;
+				display: inline-block;
+				// margin-left: .25rem;
+				font-size: .75rem;
+				padding: 0 .5rem;
+			}
+		}
+	}
+
+}
+
+// animations.....
+body.searchOpen{
+	// background: red;
+	directory{
+		#directory-header{
+			height: 4.66rem;
+			section{
+				bottom: 5rem;
+			}
+
+			[id^=search] {
+				height: 3.5rem;
+				.searchbar {
+					.icon-search{
+						margin-left: .7rem;
+						opacity: 1;
+					}
+					input{
+						padding-left: .33rem;
+						font-size: .8rem;
+						&::placeholder{
+							// opacity: .66;
+						}
+					}
+				}
+				.cancel{
+					line-height: 2.5rem;
+				}
+			}
+
+			.background{
+				// background: linear-gradient(10deg, $dgray 0%, $dgray 100%);
+				// background: $dgray;
+			}
+		}
+		table{
+
+		}
+	}
+}

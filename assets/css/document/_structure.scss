@@ -1,0 +1,54 @@
+:root{
+	font-size: 30px!important;
+}
+html,
+body{
+     margin: 0;
+     padding: 0;
+     height: 100vh;
+     overflow-x:hidden; 
+}
+html,
+body,
+*{
+     box-sizing: border-box!important;
+}
+// typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+	margin: 0;
+}
+
+body{
+
+	ui-view {
+		// height: 100vh;
+		display: block;
+		padding-top: 3rem;
+	@include breakpoint(sm){ // 600
+		padding-top: 3rem;
+	}
+	@include breakpoint(md){ // 1000
+		padding-top: 4rem;
+	}}
+
+	
+	section{
+		padding: 1rem .66rem 1.5rem;
+	@include breakpoint(sm){ // > 600
+		// padding-bottom: .75rem;
+	}}
+
+
+@include breakpoint(lg){ // > 1360
+	.container{
+		// background: blue;
+		max-width: 1320px;
+		margin: 0 auto;
+	}
+}}

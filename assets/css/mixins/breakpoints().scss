@@ -1,0 +1,65 @@
+@mixin breakpoint($screenWidth) {
+
+// DEVICES
+// mobile 
+	@if ($screenWidth==xs) {
+		@media (max-width:600px) {
+			@content;
+		}
+	} // 320, 360, 414
+
+// tablet
+	@if ($screenWidth==sm) {
+		@media (min-width:600px) {
+			@content;
+		}
+	} // 768
+
+// desktop
+	@if ($screenWidth==md) {
+		@media (min-width:1000px) {
+			@content;
+		}
+	} // 1024, 1080, 1280 
+
+	@if ($screenWidth==lg) {
+		@media (min-width:1360px) {
+			@content;
+		}
+	} // 1366, 1440, 1536, 1600
+
+	@if ($screenWidth==xl) {
+		@media (min-width:1900px) {
+			@content;
+		}
+	} // 1920
+
+// SCREENS 
+	@if ($screenWidth==v) {
+		@media (max-width:1900px) {
+			@content;
+		}
+	}
+
+	@if ($screenWidth==h) {
+		@media (min-width:1900px) {
+			@content;
+		}
+	}
+}
+
+@include breakpoint(v) {
+	body:before {
+		content: "v";
+	}
+}
+
+@include breakpoint(h) {
+	body:before {
+		content: "h";
+	}
+}
+
+body:before {
+	display: none;
+}

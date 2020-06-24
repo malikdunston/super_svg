@@ -1,0 +1,18 @@
+button{
+          border: 0;
+          background: $white;
+          color: $gray;
+}
+
+.button-container{
+          height: 2.5rem;
+          @include flex(row);
+          button{
+                    height: 100%;
+                    flex: 1;
+                    border-right: 1px solid $offwhite;
+                    &:last-child{
+                              border: 0;
+                    }
+          }
+}
