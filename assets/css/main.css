@@ -51,3 +51,11 @@ map svg .st0 path{
 map svg .st0 path:hover{
 	stroke: red;
 }
+
+map svg .example{
+	fill: transparent;
+	stroke: green;
+}
+use svg{
+	background: purple;
+}
