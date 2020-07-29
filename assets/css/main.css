@@ -16,22 +16,38 @@ map svg{
 	background: darkgray;
 }
 
-svg .st0 rect,
-svg .st0 path{
+map svg .st0 rect,
+map svg .st0 path{
 	fill:none;
 	stroke:black;
 	stroke-width:35;
 	stroke-miterlimit:10;
 }
-svg .st1 {
+map svg .st1 {
 	fill:none;
 	stroke:lime;
 	stroke-width:35;
 	stroke-miterlimit:10;
 	fill: white;
 	fill-opacity: .8;
+	transition: all .75s;
 }
 
 map:hover svg .st1{
+	stroke: red;
+	stroke-width: 75;
+}
+
+map svg .st0 rect{
+	fill: blue;
+}
+map svg .st0 rect:hover{
+	stroke: blue;
+	z-index: 0;
+}
+map svg .st0 path{
+	fill: red;
+}
+map svg .st0 path:hover{
 	stroke: red;
 }
