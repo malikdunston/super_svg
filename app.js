@@ -53,7 +53,7 @@
 			},
 			time: 1,
 			dist: 617,
-			animationLoop(distance){
+			animationLoop: function(distance){
 			// go up by 1% of the distance or base
 			// every "time"...
 				this.orig.x = this.orig.x + 1;
@@ -63,11 +63,11 @@
 					map.view.orig.y = 0;
 				};
 			},
-			stopAnimate(){
+			stopAnimate: function(){
 				clearInterval(this.setLoop);
 				this.setLoop = null;
 			},
-			startAnimate(time, distance){
+			startAnimate: function(time, distance){
 				map.disabled = null;
 				if (!this.setLoop){
 					if(typeof time === "number" && typeof distance === "number"){
